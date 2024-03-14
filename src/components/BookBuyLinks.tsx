@@ -9,7 +9,7 @@ const BookBuyLinks = ({ buyLinks }: BookBuyLinksProps) => {
     <>
       {buyLinks.map((buyLink) => {
         return (
-          <p className="buy-links">
+          <p className="buy-links" key={buyLink.name}>
             <a href={buyLink.url}>{buyLink.name}</a>
           </p>
         );
