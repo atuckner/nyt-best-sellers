@@ -1,42 +1,212 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
+}
+
+/* Grid and Media Queries */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr auto;
+  gap: 0.1rem;
+}
+
+.card-col-sm {
+  grid-column: auto / span 12;
+}
+
+@media screen and (min-width: 1200px) {
+  .card-col-lg {
+    grid-column: auto / span 4;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-col-md {
+    grid-column: auto / span 6;
+  }
+}
+
+.list-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-book-image {
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 481px) {
+  .list-stack {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .list-book-image {
+    margin: 0;
+  }
+}
+
+.show-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-book-image {
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 769px) {
+  .show-stack {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .show-book-image {
+    margin: 0;
+  }
+}
+
+/* Main Styles */
+.main {
+  margin-top: 3rem;
+}
+
+.page-title {
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+  font-size: 2.5rem;
+  margin: 2rem;
+  color: #111111;
+  font-weight: 600;
 }
 
 .card {
-  padding: 2em;
+  display: flex;
+  padding: 2rem 2rem;
+  margin: 1rem;
+  box-shadow: rgba(99, 99, 109, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+.card-title {
+  display: flex;
+}
+
+.card-link {
+  margin-left: auto;
+}
+
+.card-content {
+  margin-left: 1.5rem;
+}
+
+.rank {
+  font-size: 2rem;
+  padding: 0 1rem 0 1rem;
+  margin: 0;
+  color: #ffff;
+  width: fit-content;
+  border-radius: 5px;
+}
+
+.rank-high {
+  background-color: #345b34;
+}
+
+.rank-mid {
+  background-color: #595912;
+}
+
+.rank-low {
+  background-color: #7d3838;
+}
+
+.book-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0 0;
+}
+
+.author-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.weeks-on-list {
+  margin: 0;
+  display: flex;
+}
+
+.weeks-on-list-icon {
+  margin: 0.2rem 0.3rem 0 0;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.weeks-on-list-text {
+  margin: 0;
+  color: #454545;
+  font-size: 1rem;
+}
+
+.buy-links {
+  margin: 0 0 0.8rem 0;
+}
+
+.error-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #7d3838;
+}
+
+/* Icons */
+.sparkles-icon {
+  color: #ffbc3e;
+}
+
+.trophy-icon {
+  color: #c89942;
+}
+
+/* Loading Spinner
+    https://loading.io/css/
+*/
+.loading-spinner {
+  margin: 0 auto;
+  width: 8rem;
+  height: 8rem;
+}
+
+.loading-spinner div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+  border: 8px solid #111111;
+  border-radius: 50%;
+  animation: loading-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #111111 transparent transparent transparent;
+}
+
+.loading-spinner div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.loading-spinner div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loading-spinner div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes loading-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
