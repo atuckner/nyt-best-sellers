@@ -14,15 +14,15 @@
   grid-column: auto / span 12;
 }
 
-@media screen and (min-width: 1200px) {
-  .card-col-lg {
-    grid-column: auto / span 4;
-  }
-}
-
 @media screen and (min-width: 1024px) {
   .card-col-md {
     grid-column: auto / span 6;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card-col-lg {
+    grid-column: auto / span 4;
   }
 }
 
